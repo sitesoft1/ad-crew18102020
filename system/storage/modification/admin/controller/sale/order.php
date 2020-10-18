@@ -233,12 +233,6 @@ $data['invoice'] = ($this->config->get('orderpro_invoice_type')) ? $this->url->l
             $data['call_request_link'] = $user_info['call_request_link'];
             //zadarma ######################################## END
             
-            /*
-            echo '<pre>';
-            var_dump($results);
-            echo '</pre>';
-            */
-            
             //Gorasul crm END
             
 			$data['orders'][] = array(

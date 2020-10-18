@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7acaaef4-39a0-416c-941b-8921679924f9" name="Default Changelist" comment="ДО ПРАВОК">
+    <list default="true" id="7acaaef4-39a0-416c-941b-8921679924f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/controller/sale/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/sale/order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/sale/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/sale/order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/view/template/sale/order_list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/template/sale/order_list.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/storage/cache/cache.language.1603021816" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/storage/cache/cache.order_status.1.1603021749" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/storage/cache/cache.store.1603023148" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/storage/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/system/storage/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/storage/logs/ocmod.log" beforeDir="false" afterPath="$PROJECT_DIR$/system/storage/logs/ocmod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/storage/modification/admin/controller/sale/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/storage/modification/admin/controller/sale/order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/storage/modification/admin/model/sale/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/storage/modification/admin/model/sale/order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/system/storage/modification/admin/view/template/sale/order_list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/system/storage/modification/admin/view/template/sale/order_list.tpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/view/template/sale/order_list.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/controller/sale/order.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,6 +30,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/view/template/sale/order_list.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="187" column="10" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -75,8 +68,8 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/admin/config.php" />
         <option value="$PROJECT_DIR$/admin/model/sale/order.php" />
-        <option value="$PROJECT_DIR$/admin/view/template/sale/order_list.tpl" />
         <option value="$PROJECT_DIR$/admin/controller/sale/order.php" />
+        <option value="$PROJECT_DIR$/admin/view/template/sale/order_list.tpl" />
       </list>
     </option>
   </component>
@@ -112,19 +105,6 @@
               <item name="ad-crew.ru" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ad-crew.ru" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ad-crew.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ad-crew.ru" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ad-crew.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="sale" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -136,6 +116,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -159,12 +140,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603022960761</updated>
-      <workItem from="1603022972827" duration="5829000" />
+      <workItem from="1603022972827" duration="7174000" />
     </task>
+    <task id="LOCAL-00001" summary="Телефон в списке - готово.">
+      <created>1603029127568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603029127569</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5829000" />
+    <option name="totallyTimeSpent" value="7174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
@@ -197,27 +186,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ДО ПРАВОК" />
-    <option name="LAST_COMMIT_MESSAGE" value="ДО ПРАВОК" />
+    <MESSAGE value="Телефон в списке - готово." />
+    <option name="LAST_COMMIT_MESSAGE" value="Телефон в списке - готово." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/admin/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/controller/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="233" column="12" selection-start-line="233" selection-start-column="12" selection-end-line="233" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -235,10 +211,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/controller/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="233" column="12" selection-start-line="233" selection-start-column="12" selection-end-line="233" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/template/sale/order_list.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
+        <state relative-caret-position="315">
+          <caret line="187" column="10" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
         </state>
       </provider>
     </entry>

@@ -18260,3 +18260,2097 @@ LINE: 217
 CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
 LINE: 49
 ----------------------------------------------------------------
+2020-10-18 16:53:29 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2020-10-18 16:53:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2020-10-18 16:53:45 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2020-10-18 16:53:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2020-10-18 16:54:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+2020-10-18 16:54:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 596
+LINE: 977
+CODE: public function history() {
+LINE: 1580
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 225
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 102
+CODE: <?php echo $footer; ?>
+LINE: 717
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 210
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OrderPro for OP v2.3
+
+FILE: catalog/model/extension/total/reward.php
+CODE: $points = $this->customer->getRewardPoints();
+LINE: 6
+
+FILE: catalog/model/extension/total/credit.php
+CODE: $balance = $this->customer->getBalance();
+LINE: 5
+
+FILE: catalog/model/extension/total/coupon.php
+CODE: $this->customer->getId()
+LINE: 18
+LINE: 22
+LINE: 23
+CODE: public function unconfirm($order_id)
+LINE: 217
+CODE: foreach ($data['products'] as $product) {
+LINE: 55
+LINE: 145
+LINE: 250
+CODE: model = '" . $this->db->escape($product['model']) . "'
+LINE: 56
+LINE: 146
+LINE: 251
+CODE: foreach ($product['option'] as $option) {
+LINE: 86
+LINE: 202
+LINE: 333
+
+FILE: system/library/cart/customer.php
+CODE: public function getRewardPoints(
+LINE: 145
+
+FILE: admin/model/catalog/product.php
+CODE: public function getProduct($product_id)
+LINE: 352
+CODE: public function getProducts(
+LINE: 476
+CODE: AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 634
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 639
+CODE: $product_option_value['option_value_id'],
+LINE: 645
+
+FILE: system/library/cart/cart.php
+CODE: => ($price + $option_price)
+LINE: 250
+LINE: 251
+CODE: $product_data[] = array(
+LINE: 246
+CODE: => $product_query->row['name']
+LINE: 259
+CODE: public function add(
+LINE: 290
+CODE: public function update($cart_id
+LINE: 323
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], true);
+LINE: 186
+CODE: $data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], true);
+LINE: 928
+CODE: sale/order/add
+LINE: 188
+CODE: sale/order/edit
+LINE: 249
+LINE: 929
+CODE: sale/order/delete
+LINE: 189
+
+FILE: admin/controller/extension/dashboard/recent.php
+CODE: $data['button_view']
+LINE: 113
+CODE: => $this->currency->format
+LINE: 138
+
+FILE: admin/view/template/extension/dashboard/recent_info.tpl
+CODE: <i class="fa fa-eye"></i></a></td>
+LINE: 25
+
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <button type="submit" id="button-shipping"
+LINE: 8
+CODE: <script src="view/javascript/jquery/datetimepicker/bootstrap
+LINE: 364
+CODE: $this->load->model('extension/total/' . $order_total['code']);
+LINE: 554
+LINE: 614
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 251
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+LINE: 127
+----------------------------------------------------------------
+MOD: Курьерская служба 2008
+
+FILE: admin/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 30
+
+FILE: admin/view/template/common/header.tpl
+CODE: <head>
+LINE: 5
+CODE: 'accept_language'         => $order_query->row['accept_language'],
+LINE: 168
+
+FILE: catalog/controller/common/header.php
+CODE: $data['description'] = $this->document->getDescription();
+LINE: 48
+
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <head>
+LINE: 10
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+LINE: 340
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: public function save() {
+LINE: 84
+CODE: $order_id = $this->db->getLastId();
+LINE: 25
+LINE: 161
+CODE: $(document).delegate('#button-shipping-method', 'click', function() {
+LINE: 728
+
+FILE: catalog/controller/checkout/success.php
+CODE: unset($this->session->data['totals']);
+LINE: 45
+CODE: $data['button_continue'] = $this->language->get('button_continue');
+LINE: 53
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.tpl
+CODE: <?php if ($error_warning) { ?>
+LINE: 5
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $data['addresses'] = $this->model_account_address->getAddresses();
+LINE: 35
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.6) for OpenCart 2.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log')) {
+LINE: 636
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+
+FILE: admin/language/ru-ru/common/column_left.php
+CODE: $_['text_backup']
+LINE: 9
+----------------------------------------------------------------
+MOD: CDEK opencart
+CODE: <?php echo $quote['title']; ?>
+LINE: 25
+CODE: $catalog = array();
+LINE: 99
+----------------------------------------------------------------
+MOD: dev-opencart.com - Удаление модулей
+
+FILE: admin/controller/extension/installer.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 50
+CODE: $data['token'] = $this->session->data['token'];
+LINE: 42
+CODE: move_uploaded_file($this->request->files['file']['tmp_name'], $file);
+LINE: 119
+LINE: 157
+CODE: $zip_name = zip_entry_name($entry);
+LINE: 222
+CODE: $json['success'] = $this->language->get('text_success');
+LINE: 670
+CODE: $json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);
+LINE: 547
+CODE: public function unzip() {
+LINE: 431
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], true)),
+LINE: 173
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], true)),
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/extension/modification.php
+CODE: $this->response->redirect
+LINE: 52
+LINE: 453
+LINE: 525
+LINE: 562
+LINE: 599
+LINE: 634
+
+FILE: admin/language/en-gb/extension/installer.php
+CODE: <?php
+LINE: 8
+
+FILE: admin/language/ru-ru/extension/installer.php
+CODE: <?php
+LINE: 8
+CODE: <?php
+LINE: 4
+CODE: <?php
+LINE: 4
+CODE: if ($this->user->hasPermission('access', 'extension/extension')) {
+LINE: 240
+----------------------------------------------------------------
+MOD: Order Manager oc23x
+CODE: $sale = array();
+LINE: 347
+
+FILE: admin/language/ru-ru/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: $_['heading_title']
+LINE: 3
+CODE: $data['button_cancel'] = $this->language->get('button_cancel');
+LINE: 476
+LINE: 868
+CODE: $data['cancel']
+LINE: 547
+LINE: 938
+CODE: <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
+LINE: 4
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <a href="<?php echo $cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i> <?php echo $button_cancel; ?></a>
+LINE: 4
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "'");
+LINE: 299
+CODE: public function getOrder(
+LINE: 455
+CODE: return array(
+LINE: 514
+CODE: $order_query->row['order_id'],
+LINE: 518
+CODE: $order_query->row['total'],
+LINE: 573
+----------------------------------------------------------------
+MOD: Order Manager Status Templates in order info, editor
+CODE: <?php echo $footer; ?>
+LINE: 741
+CODE: <?php echo $footer; ?>
+LINE: 2582
+----------------------------------------------------------------
+MOD: Order Manager Track Number oc21x-23x
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 987
+CODE: $order_query->row['order_id'],
+LINE: 95
+CODE: $_['heading_title']
+LINE: 5
+CODE: $_['heading_title']
+LINE: 5
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 109
+CODE: <?php echo $footer; ?>
+LINE: 782
+CODE: $order_query->row['order_id'],
+LINE: 46
+CODE: if ($order_info['invoice_no']) {
+LINE: 217
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
