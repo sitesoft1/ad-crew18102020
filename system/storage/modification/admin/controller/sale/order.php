@@ -210,6 +210,7 @@ $data['invoice'] = ($this->config->get('orderpro_invoice_type')) ? $this->url->l
   
 		foreach ($results as $result) {
 		    
+		    //Gorasul crm
 		    $order_history = $this->model_sale_order->getOrderHistories($result['order_id']);
             if(!empty($order_history)){
                 $order_history = end($order_history);
@@ -226,6 +227,20 @@ $data['invoice'] = ($this->config->get('orderpro_invoice_type')) ? $this->url->l
                 $order_history_date_added = '';
             }
             
+            //zadarma ###########################################
+            $this->load->model('user/user');
+            $user_info = $this->model_user_user->getUser($this->session->data['user_id']);
+            $data['call_request_link'] = $user_info['call_request_link'];
+            //zadarma ######################################## END
+            
+            /*
+            echo '<pre>';
+            var_dump($results);
+            echo '</pre>';
+            */
+            
+            //Gorasul crm END
+            
 			$data['orders'][] = array(
 				'order_id'      => $result['order_id'],
 				'customer'      => $result['customer'],
@@ -235,6 +250,7 @@ $data['invoice'] = ($this->config->get('orderpro_invoice_type')) ? $this->url->l
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
 				'shipping_code' => $result['shipping_code'],
 				'order_history_comment' => nl2br($order_history_comment),
+				'telephone' => $result['telephone'],
 				'order_history_date_added' => date('d.m.Y H:i', strtotime($order_history_date_added)),
                 'view'          => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, true),
 				'edit'          => $this->url->link('sale/orderpro/edit', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, true)

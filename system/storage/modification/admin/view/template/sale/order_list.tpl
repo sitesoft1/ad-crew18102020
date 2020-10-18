@@ -155,7 +155,13 @@
                   <td class="text-right"><?php echo $order['total']; ?></td>
                   <td class="text-left"><?php echo $order['date_added']; ?></td>
                   <td class="text-left"><?php echo $order['date_modified']; ?></td>
-                  <td class="text-right"><a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a> <a href="<?php echo $order['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                  
+                  <td class="text-right">
+                      <a onclick="callRequest('<?php echo $order["telephone"]; ?>');" data-toggle="tooltip" title="Позвонить клиенту" class="btn btn-success"><i class="fa fa-phone"></i></a>
+                      <a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                      <a href="<?php echo $order['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                  </td>
+                  
                 </tr>
                 <?php } ?>
                 <?php } else { ?>
@@ -175,6 +181,22 @@
     </div>
   </div>
   <script type="text/javascript"><!--
+
+      //zadarma ##############################################
+      function callRequest(phone) {
+          var link = '<?php echo $call_request_link; ?>';
+          var n = '?n=';
+          var phone = phone.replace(/\D/g, '');
+          var CallRequestUrl = link+n+phone;
+          $.ajax({
+              url: CallRequestUrl,
+              success: function(){
+                  //alert('Load was performed.');
+              }
+          });
+      }
+      //zadarma END ############################################
+      
 $('#button-filter').on('click', function() {
 	url = 'index.php?route=sale/order&token=<?php echo $token; ?>';
 
