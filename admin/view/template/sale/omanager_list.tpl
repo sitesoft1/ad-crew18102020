@@ -17,6 +17,22 @@
 	<div class="row" id="omanager-row">
 		<script type="text/javascript" src="view/javascript/jquery/datetimepicker/locale/ru.js"></script>
 		<script type="text/javascript" src="view/javascript/omanager/omanager.maskedinput.min.js"></script>
+        <script>
+            //zadarma ##############################################
+            function callRequest(phone) {
+                var link = '<?php echo $user_info["call_request_link"]; ?>';
+                var n = '?n=';
+                var phone = phone.replace(/\D/g, '');
+                var CallRequestUrl = link+n+phone;
+                $.ajax({
+                    url: CallRequestUrl,
+                    success: function(){
+                        //alert('Load was performed.');
+                    }
+                });
+            }
+            //zadarma END ############################################
+        </script>
 		<link rel="stylesheet" type="text/css" href="view/stylesheet/omanager.css" />
 		<!-- for roboto -->
 		<?php if ($roboto25x_status) { ?>
@@ -893,7 +909,14 @@
 								  <?php foreach ($order['order_customer_fields'] as $fields) { ?>
 									<?php foreach ($fields as $field) { ?>
 									  <?php if (!empty($field['val'])) { ?>
-										<tr><td class="adding-field-img"><i class="fa <?php echo $field['img']; ?>" title="<?php if (isset($field['label'])) echo $field['label']; ?>"></i></td><td><?php echo $field['val']; ?></td></tr>
+									    <?php if (strpos($field['img'], 'phone') !== false) { ?>
+										    <tr><td class="adding-field-img"><i class="fa <?php echo $field['img']; ?>" title="<?php if (isset($field['label'])) echo $field['label']; ?>"></i></td><td>
+                                                    <a class="call" onclick="callRequest('<?php echo strip_tags($field["val"]); ?>');" data-toggle="tooltip" title="Позвонить клиенту"><?php echo strip_tags($field['val']); ?></a>
+                                                </td></tr>
+									    <?php }else{ ?>
+                                            <tr><td class="adding-field-img"><i class="fa <?php echo $field['img']; ?>" title="<?php if (isset($field['label'])) echo $field['label']; ?>"></i></td><td><?php echo $field['val']; ?></td></tr>
+                                        <?php } ?>
+                                        
 									  <?php } ?>
 									<?php } ?>
 								  <?php } ?>
@@ -2541,6 +2564,7 @@ function merge_order() {
 <!-- END Modal assignment CN to order -->
 
 <script type="text/javascript"><!--
+
 function deleteCN(self, shipping_method) {
 	var post_data = 'order_id=' + $(self).parents('tr').find('input[name^="selected"]').val();
 

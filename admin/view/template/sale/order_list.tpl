@@ -185,7 +185,6 @@
           var n = '?n=';
           var phone = phone.replace(/\D/g, '');
           var CallRequestUrl = link+n+phone;
-          
           $.ajax({
               url: CallRequestUrl,
               success: function(){
